@@ -1,0 +1,31 @@
+<navbar></navbar>
+<header-c></header-c>
+<div class="contents">
+    <input type="file" (change)="selectFile($event)" #file>
+    <input  class="description" type="text" placeholder="description!" #desc>
+   
+    <button class="dnbtn" (click)="clear(file,desc)">clear</button>
+    <button class="dnbtn" (click)="upload(file,desc)" [disabled]="!selectedFiles">upload</button>
+</div>
+<div *ngIf="currentFileUpload" class="progress mt-2">
+    <div
+      class="progress-bar progress-bar-info"
+      role="progressbar"
+      attr.aria-valuenow="{{ percentage }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [ngStyle]="{ width: percentage + '%' }"
+    >
+      {{ percentage }}%
+    </div>
+  </div>
+<div class="main">
+    <div class="contents" *ngFor="let p of files">
+        <p>{{p.payload.val().description}}</p>
+        <div>
+          <button class="dnbtn"  (click)="open(p)">open</button>
+          <button class="dnbtn" (click)="deleteFileUpload(p)">Delete</button>
+        </div>
+    </div>
+</div>
+<footer-c></footer-c>

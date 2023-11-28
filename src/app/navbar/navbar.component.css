@@ -1,0 +1,11 @@
+.img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 500px) {
+    a{
+        font-size: small;
+    }
+}

@@ -1,0 +1,15 @@
+<div class="full">
+    <div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="assets/logo.png" />
+            <p id="profile-name" class="profile-name-card">KRPBKS</p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputEmail" class="form-control" placeholder="User Id" #userid required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" #userpassword required>
+                
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="login()">Login with Google</button>
+            </form>
+        </div>
+    </div>
+</div>
